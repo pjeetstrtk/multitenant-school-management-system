@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('tenants', function (Blueprint $table) {
 
-            $table->increments('tenant_id');
+            $table->unsignedBigInteger('tenant_id')->nullable()->change();
             $table->string('school_name',100);
             $table->string('address',255)->nullable();
             $table->timestamp('created_at')->useCurrent();
-            
+
 
         });
     }
